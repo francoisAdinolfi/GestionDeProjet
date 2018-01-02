@@ -1,19 +1,14 @@
 package states;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import context.Context;
 import transition.*;
 
 public final class State6 extends AbstractState {
 	
-	public State6(Set<AbstractTransition> anAbstractTransitionSet) {
-		this.anAbstractTransitionSet.addAll(anAbstractTransitionSet);
-	}
-	
 	// Fire section
 	public AbstractState fire(Context context) {
+		if(this.anAbstractTransitionSet.isEmpty())
+			addTransitions();
 		for(AbstractTransition t : anAbstractTransitionSet)
 			if(t.isFirable(context))
 				return t.fire(context);
@@ -21,18 +16,20 @@ public final class State6 extends AbstractState {
 		return this;
 	}
 
+	public void addTransitions() {
+		this.anAbstractTransitionSet.add(new Transition_611());
+		this.anAbstractTransitionSet.add(new Transition_612());
+		this.anAbstractTransitionSet.add(new Transition_67());
+	}
+	
 	public static AbstractState getInstance() {
 		if (INSTANCE == null){
-			INSTANCE = State6.getState();	
+			INSTANCE = new State6();	
 		}
 		return INSTANCE;
 	}
 	
-	public static AbstractState getState() {
-		final Set<AbstractTransition> anAbstractTransitionSet = new HashSet<AbstractTransition>();
-		anAbstractTransitionSet.add(new Transition_611());
-		anAbstractTransitionSet.add(new Transition_612());
-		anAbstractTransitionSet.add(new Transition_67());
-		return new State6(anAbstractTransitionSet);
+	public String toString() {
+		return "State 6";
 	}
 }

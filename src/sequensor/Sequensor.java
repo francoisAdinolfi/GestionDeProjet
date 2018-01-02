@@ -21,5 +21,7 @@ public final class Sequensor {
 		this.context.getaTCPServer().aBasicTimer.stop();
 	}
 	
-	
+	public static Sequensor getSequensor(TCPServer aTCPServer) {
+		return new Sequensor(aTCPServer);
+	}
 }

@@ -22,8 +22,8 @@ public final class TCPServer implements Runnable {
 	public final BasicTimer aBasicTimer = new BasicTimer(MSL);
 	
 	// Constructor section
-	public TCPServer() {
-		this.aSequensor = new Sequensor(this);
+	private TCPServer() {
+		this.aSequensor = Sequensor.getSequensor(this);
 	}
 
 	// TCPServer Runnable section
@@ -91,5 +91,9 @@ public final class TCPServer implements Runnable {
 	}
 
 	public void writeMsg() {
+	}
+	
+	public static TCPServer getTCPServer() {
+		return new TCPServer();
 	}
 }

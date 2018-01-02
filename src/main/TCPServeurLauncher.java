@@ -8,7 +8,7 @@ public class TCPServeurLauncher {
 	
 	public static void main (String[] args) throws InterruptedException{
 		long startTime = System.currentTimeMillis();
-		Thread TCPServerThread = new Thread(new TCPServer());
+		Thread TCPServerThread = new Thread(TCPServer.getTCPServer());
 		TCPServerThread.start();
 		
 		// loop until the delay
