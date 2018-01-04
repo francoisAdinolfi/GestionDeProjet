@@ -8,6 +8,7 @@ public class Perform_332 implements Performable<Context> {
 	public void perform(Context aContext) {
 		aContext.getaTCPServer().inc_I();
 		aContext.getaTCPServer().writeMsg();
+		aContext.getaTCPServer().aBasicTimer.stop();
 		aContext.getaTCPServer().aBasicTimer.start();
 	}
 

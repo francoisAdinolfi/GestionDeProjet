@@ -8,6 +8,7 @@ package timer;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import server.TCPServer;
 
 /**
  *
@@ -92,10 +93,12 @@ public final class BasicTimer {
     private final int delay; //Milliseconds
 //    private final TimeOver timeOver = new TimeOver();
     private boolean aTimeOver = false;
+    private TCPServer aTCPServer;
 
     //Inner class
     private final class TimeOverTask extends TimerTask {
-    //TimeOverTask Constructor
+
+	//TimeOverTask Constructor
         public TimeOverTask() {
             aTimeOver = false;
         }
@@ -106,12 +109,14 @@ public final class BasicTimer {
             aTimeOver = true;
 //            aBasicTimer.cancel();
             System.out.println("run() of TimeOverTask: Time is over !");
+            aTCPServer.timeOver = true;
         }
     }
 
     //Basic Timer Constructor
-    public BasicTimer(int milliSeconds) {
+    public BasicTimer(int milliSeconds, TCPServer aTCPServer) {
         this.delay = milliSeconds;
+        this.aTCPServer = aTCPServer;
         System.out.println("BasicTimer(aTimerTask, " + milliSeconds + "): the timer has been created with a delay= " + delay + ".");
     }
 

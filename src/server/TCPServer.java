@@ -1,4 +1,6 @@
 package server;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -11,6 +13,7 @@ public final class TCPServer implements Runnable {
 	private final static int MSL = 20;
 	private final Sequensor aSequensor;
 	private final Set<Event> eventSet = new LinkedHashSet<Event>();
+	private final Set<Event> eventSetToBeAdd = new LinkedHashSet<Event>();
 	private final Set<Event> cmdASet = new LinkedHashSet<Event>();
 	private final Set<String> tcpMsgC = new LinkedHashSet<String>();
 	private final Set<String> tcpMsgS = new LinkedHashSet<String>();
@@ -18,33 +21,69 @@ public final class TCPServer implements Runnable {
 	private long index_i = 0;
 	private long numSeqC = 0;
 	private long numSeqS = 0;
+	public boolean timeOver = false;
 
-	public final BasicTimer aBasicTimer = new BasicTimer(MSL);
+	public final BasicTimer aBasicTimer;
 	
 	// Constructor section
 	private TCPServer() {
+		this.aBasicTimer = new BasicTimer(MSL, this);
 		this.aSequensor = Sequensor.getSequensor(this);
 	}
 
 	// TCPServer Runnable section
 	public void run(){
+		/*cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("Close"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("END"));*/
+		
+		/*cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("Abort"));*/
+		
+		/*cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));*/
+		
+		/*cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("Close"));
+		eventSet.add(new Event("RST"));*/
+		
 		for(;true;) {
 			//Update eventSet and cmdA
 			this.receive();
 			//Set the events to the sequensor
-			for(Event e : cmdASet) {
-				this.aSequensor.tryy(e);
-				cmdASet.remove(e);
-				}
-			for(Event e : eventSet) {
-				this.aSequensor.tryy(e);
-				eventSet.remove(e);
+			
+			Iterator<Event> iterator = cmdASet.iterator();
+			while (iterator.hasNext()) {
+			    Event event = iterator.next();
+			    aSequensor.tryy(event);
+			    iterator.remove();
+			}
+			
+			iterator = eventSet.iterator();
+			while (iterator.hasNext()) {
+			    Event event = iterator.next();
+			    aSequensor.tryy(event);
+			    iterator.remove();
+			}
+			
+			eventSet.addAll(eventSetToBeAdd);
+			eventSetToBeAdd.clear();
+		
+			if(timeOver) {
+				eventSet.add(new Event("TimeOver"));
+				timeOver = false;
 			}
 		}
 	}
 
 	public void addEventInEventSet(Event e) {
-		eventSet.add(e);
+		eventSetToBeAdd.add(e);
 	}
 	
 	private int receive() {
@@ -63,8 +102,6 @@ public final class TCPServer implements Runnable {
 		index_i = 0;
 		numSeqC = 0;
 		numSeqS = 0;
-		eventSet.clear();
-		cmdASet.clear();
 		tcpMsgC.clear();
 		tcpMsgS.clear();
 	}

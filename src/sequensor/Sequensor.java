@@ -7,18 +7,20 @@ import states.*;
 
 public final class Sequensor {
 	
-	private Context context;
+	private Context aContext;
 
 	// Constructor section
 	public Sequensor(TCPServer aTCPServer) {
-		this.context = new Context(State0.getInstance() ,aTCPServer);
+		this.aContext = new Context(State0.getInstance() ,aTCPServer);
 	}
 	
 	// Functional section
 	public void tryy(Event e){
-		this.context.setLastEvent(e);
-		this.context.setCurrentState(this.context.getCurrentState().fire(context));
-		this.context.getaTCPServer().aBasicTimer.stop();
+		System.out.println(aContext.getCurrentState().toString());
+		this.aContext.setLastEvent(e);
+		this.aContext.setCurrentState(this.aContext.getCurrentState().fire(aContext));
+		System.out.println(aContext.getCurrentState().toString());
+		//this.aContext.getaTCPServer().aBasicTimer.stop();
 	}
 	
 	public static Sequensor getSequensor(TCPServer aTCPServer) {

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 import context.Context;
 import event.Event;
 import server.TCPServer;
-import transition.*;
+import transitions.*;
 
 class Transition_Test {
 
