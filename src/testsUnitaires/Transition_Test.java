@@ -22,9 +22,13 @@ class Transition_Test {
 	}
 	
 	@Test
-	void testIsFirable() {
+	void testIsFirablePositiveEvent() {
 		aContext.setLastEvent(new Event("ACK"));
 		assertTrue(transition.isFirable(aContext));
+	}
+	
+	@Test
+	void testIsFirableNegativeEvent() {
 		aContext.setLastEvent(new Event("Open"));
 		assertFalse(transition.isFirable(aContext));
 	}

@@ -82,16 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="states.State0" project="GestionDeProjet" 
-    file="/GestionDeProjet/src/states/State0.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1128" y="75"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="false" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="perform.Perform_01" project="GestionDeProjet" 
+  <class id="10" language="java" name="perform.Perform_01" project="GestionDeProjet" 
     file="/GestionDeProjet/src/perform/Perform_01.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1243" y="249"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="satisfiable.Satisfiable_01" project="GestionDeProjet" 
+  <class id="11" language="java" name="satisfiable.Satisfiable_01" project="GestionDeProjet" 
     file="/GestionDeProjet/src/satisfiable/Satisfiable_01.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1236" y="436"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,154 +100,163 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <class id="12" language="java" name="states.State0" project="GestionDeProjet" 
+    file="/GestionDeProjet/src/states/State0.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1101" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <association id="13">    
-    <bendpoint x="678" y="295"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="14" name="anAbstractTransitionSet">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="15" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="17" name="aTCPServer">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="18" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="19">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="20" name="aBasicTimer"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
-    <bendpoint x="912" y="285"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="23" name="nextState">        
-        <position height="0" width="0" x="21" y="35"/>      
-      </attribute>      
-      <multiplicity id="24" minimum="0" maximum="1">        
-        <position height="0" width="0" x="21" y="35"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="26" name="aPerformable">        
-        <position height="0" width="0" x="-31" y="-21"/>      
-      </attribute>      
-      <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="16" width="23" x="970" y="348"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="28">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <association id="29">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="30" name="currentState">        
-        <position height="0" width="0" x="21" y="35"/>      
-      </attribute>      
-      <multiplicity id="31" minimum="0" maximum="1">        
-        <position height="0" width="0" x="21" y="35"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="33" name="aSatisfiable">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="34" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="35">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="36" name="aContext">        
+      <attribute id="14" name="aContext">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="37" minimum="0" maximum="1">        
+      <multiplicity id="15" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="38">    
+  <association id="16">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="17" name="aBasicTimer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="21">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="22" name="aPerformable">        
+        <position height="0" width="0" x="-31" y="-21"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="1">        
+        <position height="16" width="23" x="970" y="348"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="24">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <nesting id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <association id="26">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="27" name="aSequensor">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="30" name="aTCPServer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="31" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <bendpoint x="678" y="295"/>    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="39" name="INSTANCE">        
+      <attribute id="33" name="anAbstractTransitionSet">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="35">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="36">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="37" name="currentState">        
         <position height="0" width="0" x="21" y="35"/>      
       </attribute>      
-      <multiplicity id="40" minimum="0" maximum="1">        
+      <multiplicity id="38" minimum="0" maximum="1">        
         <position height="0" width="0" x="21" y="35"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <nesting id="42">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <realization id="43">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <dependency id="44">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <realization id="45">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <dependency id="46">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="47">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="48">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="49" name="aSequensor">        
+  <association id="39">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="40" name="aSatisfiable">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
+      <multiplicity id="41" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="42">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="44">    
+    <bendpoint x="912" y="285"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="45" name="nextState">        
+        <position height="0" width="0" x="21" y="35"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="21" y="35"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="48">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="49" name="INSTANCE"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

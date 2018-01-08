@@ -1,5 +1,4 @@
 package server;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -15,6 +14,7 @@ public final class TCPServer implements Runnable {
 	private final Set<Event> eventSet = new LinkedHashSet<Event>();
 	private final Set<Event> eventSetToBeAdd = new LinkedHashSet<Event>();
 	private final Set<Event> cmdASet = new LinkedHashSet<Event>();
+	private final Set<Event> cmdASetToBeAdd = new LinkedHashSet<Event>();
 	private final Set<String> tcpMsgC = new LinkedHashSet<String>();
 	private final Set<String> tcpMsgS = new LinkedHashSet<String>();
 	
@@ -33,25 +33,11 @@ public final class TCPServer implements Runnable {
 
 	// TCPServer Runnable section
 	public void run(){
-		/*cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("Close"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("END"));*/
 		
-		/*cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("Abort"));*/
-		
-		/*cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));*/
-		
-		/*cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("Close"));
-		eventSet.add(new Event("RST"));*/
+		testNormal();
+		//testAbort();
+		//testRST();
+		//testTimeOver();
 		
 		for(;true;) {
 			//Update eventSet and cmdA
@@ -74,6 +60,9 @@ public final class TCPServer implements Runnable {
 			
 			eventSet.addAll(eventSetToBeAdd);
 			eventSetToBeAdd.clear();
+			
+			cmdASet.addAll(cmdASetToBeAdd);
+			cmdASetToBeAdd.clear();
 		
 			if(timeOver) {
 				eventSet.add(new Event("TimeOver"));
@@ -84,6 +73,10 @@ public final class TCPServer implements Runnable {
 
 	public void addEventInEventSet(Event e) {
 		eventSetToBeAdd.add(e);
+	}
+	
+	public void addEventInCmdASet(Event e) {
+		cmdASetToBeAdd.add(e);
 	}
 	
 	private int receive() {
@@ -132,5 +125,33 @@ public final class TCPServer implements Runnable {
 	
 	public static TCPServer getTCPServer() {
 		return new TCPServer();
+	}
+	
+	private void testNormal() {
+		cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("Close"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("END"));
+	}
+	
+	private void testAbort() {
+		cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("Abort"));
+	}
+	
+	private void testRST() {
+		cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+	}
+	
+	private void testTimeOver() {
+		cmdASet.add(new Event("Open"));
+		eventSet.add(new Event("SYN"));
+		eventSet.add(new Event("ACK"));
+		eventSet.add(new Event("Close"));
+		eventSet.add(new Event("RST"));
 	}
 }

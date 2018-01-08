@@ -12,11 +12,11 @@ public class TCPServeurLauncher {
 		TCPServerThread.start();
 		
 		// loop until the delay
-		/*for ( ;TCPServerThread.isAlive() ; ) {
+		for ( ;TCPServerThread.isAlive() ; ) {
 			long t = System.currentTimeMillis();
 			if ((t - startTime) > DELAY)
 				TCPServerThread.interrupt();
 			TCPServerThread.join() ;
-		}*/
+		}
 	}
 }

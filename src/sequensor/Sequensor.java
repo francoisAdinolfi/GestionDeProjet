@@ -16,11 +16,11 @@ public final class Sequensor {
 	
 	// Functional section
 	public void tryy(Event e){
-		System.out.println(aContext.getCurrentState().toString());
+		System.out.println("Etat de départ : " + aContext.getCurrentState().toString());
+		System.out.println("Event : " + e.name);
 		this.aContext.setLastEvent(e);
 		this.aContext.setCurrentState(this.aContext.getCurrentState().fire(aContext));
-		System.out.println(aContext.getCurrentState().toString());
-		//this.aContext.getaTCPServer().aBasicTimer.stop();
+		System.out.println("Etat d'arrivé : " + aContext.getCurrentState().toString() + "\n");
 	}
 	
 	public static Sequensor getSequensor(TCPServer aTCPServer) {

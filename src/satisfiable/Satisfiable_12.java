@@ -5,8 +5,7 @@ import event.Event;
 
 public class Satisfiable_12 implements Satisfiable<Context>{
 
-	private static final String EVENT_SYN_NAME = "SYN" ;
-	private final Event synEvt = new Event(EVENT_SYN_NAME);
+	private final Event synEvt = new Event(Event.EVENT_SYN_NAME);
 	
 	@Override
 	public boolean isSatisfied(Context aContext) {

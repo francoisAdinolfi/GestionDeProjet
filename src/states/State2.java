@@ -1,15 +1,15 @@
 package states;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import context.Context;
-import transitions.*;
+import transitions.AbstractTransition;
+import transitions.Transition_211;
+import transitions.Transition_212;
+import transitions.Transition_23;
+import transitions.Transition_27;
 
-public class State2 extends AbstractState {
+public final class State2 extends AbstractState {
 	
 	protected static AbstractState INSTANCE = null;
-	protected Set<AbstractTransition> anAbstractTransitionSet = new HashSet<AbstractTransition>();
 	
 	// Fire section
 	public AbstractState fire(Context context) {

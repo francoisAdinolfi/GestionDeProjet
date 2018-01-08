@@ -9,18 +9,20 @@ import server.TCPServer;
 
 class Perform_Test {
 
-	Performable<Context> perform_01;
+	Performable<Context> perform_34;
 	Context aContext;
 	
 	@BeforeEach
 	public void setUp() {
-		perform_01 = new Perform_01();
+		perform_34 = new Perform_34();
 		aContext = new Context(null, TCPServer.getTCPServer());
+		aContext.getaTCPServer().aBasicTimer.start();
+		System.out.println("début du test");
 	}
 	
 	@Test
 	void test() {
-		perform_01.perform(aContext);
+		perform_34.perform(aContext);
 	}
 
 }

@@ -8,8 +8,7 @@ import transitions.AbstractTransition;
 
 public abstract class AbstractState {
 	
-	//protected static AbstractState INSTANCE = null;
-	//protected Set<AbstractTransition> anAbstractTransitionSet = new HashSet<AbstractTransition>();
+	protected Set<AbstractTransition> anAbstractTransitionSet = new HashSet<AbstractTransition>();
 	
 	public abstract AbstractState fire(Context context);
 }

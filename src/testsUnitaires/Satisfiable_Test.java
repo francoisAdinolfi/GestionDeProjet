@@ -25,21 +25,38 @@ class Satisfiable_Test {
 	}
 	
 	@Test
-	void test() {
+	void firstSamplePositive() {
 		aContext.setLastEvent(new Event("Open"));
 		assertTrue(satisfiable_01.isSatisfied(aContext));
+	}
+	
+	@Test
+	void firstSampleNegative() {
 		aContext.setLastEvent(new Event("Close"));
 		assertFalse(satisfiable_01.isSatisfied(aContext));
-		
+	}
+	
+	@Test
+	void secondSamplePositive() {
 		aContext.setLastEvent(new Event("RST"));
 		assertTrue(satisfiable_41.isSatisfied(aContext));
+	}
+	
+	@Test
+	void secondSampleNegative() {
 		aContext.setLastEvent(new Event("Close"));
 		assertFalse(satisfiable_41.isSatisfied(aContext));
-		
+	}
+	
+	@Test
+	void thirdSamplePositive() {
 		aContext.setLastEvent(new Event("Abort"));
 		assertTrue(satisfiable_47.isSatisfied(aContext));
+	}
+	
+	@Test
+	void thirdSampleNegative() {
 		aContext.setLastEvent(new Event("Close"));
 		assertFalse(satisfiable_47.isSatisfied(aContext));
 	}
-
 }

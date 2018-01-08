@@ -5,8 +5,7 @@ import event.Event;
 
 public class Satisfiable_37 implements Satisfiable<Context>{
 
-	private static final String EVENT_ABORT_NAME = "Abort" ;
-	private final Event abortEvt = new Event(EVENT_ABORT_NAME);
+	private final Event abortEvt = new Event(Event.EVENT_ABORT_NAME);
 	
 	@Override
 	public boolean isSatisfied(Context aContext) {
