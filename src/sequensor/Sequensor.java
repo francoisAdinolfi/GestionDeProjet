@@ -24,6 +24,8 @@ public final class Sequensor {
 	}
 	
 	public static Sequensor getSequensor(TCPServer aTCPServer) {
-		return new Sequensor(aTCPServer);
+		if(aTCPServer != null)
+			return new Sequensor(aTCPServer);
+		return null;
 	}
 }

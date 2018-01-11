@@ -34,6 +34,9 @@ public final class TCPServer implements Runnable {
 	// TCPServer Runnable section
 	public void run(){
 		
+		int testNormal = 0;
+		//int testAbort = 0;
+		
 		testNormal();
 		//testAbort();
 		//testRST();
@@ -68,6 +71,16 @@ public final class TCPServer implements Runnable {
 				eventSet.add(new Event("TimeOver"));
 				timeOver = false;
 			}
+			
+			if(testNormal == 0) {
+				testNormalPart2();
+				testNormal = 1;
+			}
+			
+			/*if(testAbort == 0) {
+				testAbortPart2();
+				testAbort = 1;
+			}*/
 		}
 	}
 
@@ -80,6 +93,7 @@ public final class TCPServer implements Runnable {
 	}
 	
 	private int receive() {
+		
 		return 0;
 	}
 
@@ -112,15 +126,19 @@ public final class TCPServer implements Runnable {
 	}
 
 	public void writeFIN() {
+		System.out.println("writeFIN");
 	}
 
 	public void writeACK() {
+		System.out.println("writeACK");
 	}
 
 	public void writeSYN() {
+		System.out.println("writeSYN");
 	}
 
 	public void writeMsg() {
+		System.out.println("writeMsg");
 	}
 	
 	public static TCPServer getTCPServer() {
@@ -128,30 +146,38 @@ public final class TCPServer implements Runnable {
 	}
 	
 	private void testNormal() {
-		cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("Close"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("END"));
+		cmdASet.add(new Event(Event.EVENT_OPEN_NAME));
+		eventSet.add(new Event(Event.EVENT_SYN_NAME));
+		eventSet.add(new Event(Event.EVENT_ACK_NAME));
 	}
 	
+	private void testNormalPart2() {
+		addEventInCmdASet(new Event(Event.EVENT_CLOSE_NAME));
+		addEventInEventSet(new Event(Event.EVENT_ACK_NAME));
+		addEventInEventSet(new Event(Event.EVENT_END_NAME));
+	}
+	
+	
 	private void testAbort() {
-		cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("Abort"));
+		cmdASet.add(new Event(Event.EVENT_OPEN_NAME));
+		eventSet.add(new Event(Event.EVENT_SYN_NAME));
+	}
+	
+	private void testAbortPart2() {
+		addEventInCmdASet(new Event(Event.EVENT_ABORT_NAME));
 	}
 	
 	private void testRST() {
-		cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
+		cmdASet.add(new Event(Event.EVENT_OPEN_NAME));
+		eventSet.add(new Event(Event.EVENT_SYN_NAME));
+		eventSet.add(new Event(Event.EVENT_RST_NAME));
 	}
 	
 	private void testTimeOver() {
-		cmdASet.add(new Event("Open"));
-		eventSet.add(new Event("SYN"));
-		eventSet.add(new Event("ACK"));
-		eventSet.add(new Event("Close"));
-		eventSet.add(new Event("RST"));
+		cmdASet.add(new Event(Event.EVENT_OPEN_NAME));
+		eventSet.add(new Event(Event.EVENT_SYN_NAME));
+		eventSet.add(new Event(Event.EVENT_ACK_NAME));
+		eventSet.add(new Event(Event.EVENT_CLOSE_NAME));
+		eventSet.add(new Event(Event.EVENT_ACK_NAME));
 	}
 }

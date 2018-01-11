@@ -35,8 +35,7 @@ public class State3_test {
 	@Test
 	public void firstPositiveEvent() {
 		System.out.println("debut event rst 31");
-		//anEvent = new Event(EVENT_RST_NAME);
-		anEvent = new Event("RST");
+		anEvent = new Event(Event.EVENT_RST_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -56,8 +55,7 @@ public class State3_test {
 	@Test
 	public void secondPositiveEvent() {
 		System.out.println("debut event timeOver 331");
-		//anEvent = new Event(EVENT_TO_NAME);
-		anEvent = new Event("TimeOver");
+		anEvent = new Event(Event.EVENT_TO_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -77,8 +75,7 @@ public class State3_test {
 	@Test
 	public void thirdPositiveEvent() {
 		System.out.println("debut event ack 332");
-		//anEvent = new Event(EVENT_ACK_NAME);
-		anEvent = new Event("ACK");
+		anEvent = new Event(Event.EVENT_ACK_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -98,8 +95,7 @@ public class State3_test {
 	@Test
 	public void fourthPositiveEvent() {
 		System.out.println("debut event close 34");
-		//anEvent = new Event(EVENT_CLOSE_NAME);
-		anEvent = new Event("Close");
+		anEvent = new Event(Event.EVENT_CLOSE_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -119,8 +115,7 @@ public class State3_test {
 	@Test
 	public void fifthPositiveEvent() {
 		System.out.println("debut event abort 37");
-		//anEvent = new Event(EVENT_ABORT_NAME);
-		anEvent = new Event("Abort");
+		anEvent = new Event(Event.EVENT_ABORT_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -139,8 +134,7 @@ public class State3_test {
 	@Test
 	public void firstNegativeEvent() {
 		System.out.println("debut event open");
-		//anEvent = new Event(EVENT_OPEN_NAME);
-		anEvent = new Event("Open");
+		anEvent = new Event(Event.EVENT_OPEN_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -159,8 +153,7 @@ public class State3_test {
 	@Test
 	public void secondNegativeEvent() {
 		System.out.println("debut event syn");
-		//anEvent = new Event(EVENT_SYN_NAME);
-		anEvent = new Event("SYN");
+		anEvent = new Event(Event.EVENT_SYN_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
@@ -179,8 +172,7 @@ public class State3_test {
 	@Test
 	public void thirdNegativeEvent() {
 		System.out.println("debut event end");
-		//anEvent = new Event(EVENT_END_NAME);
-		anEvent = new Event("END");
+		anEvent = new Event(Event.EVENT_END_NAME);
 		aContext.setLastEvent(anEvent);
 		
 		assertTrue(aContext.getCurrentState().toString().equals("State 3"));
