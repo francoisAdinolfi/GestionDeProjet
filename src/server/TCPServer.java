@@ -34,13 +34,13 @@ public final class TCPServer implements Runnable {
 	// TCPServer Runnable section
 	public void run(){
 		
-		int testNormal = 0;
+		//int testNormal = 0;
 		//int testAbort = 0;
 		
-		testNormal();
+		//testNormal();
 		//testAbort();
 		//testRST();
-		//testTimeOver();
+		testTimeOver();
 		
 		for(;true;) {
 			//Update eventSet and cmdA
@@ -72,10 +72,10 @@ public final class TCPServer implements Runnable {
 				timeOver = false;
 			}
 			
-			if(testNormal == 0) {
+			/*if(testNormal == 0) {
 				testNormalPart2();
 				testNormal = 1;
-			}
+			}*/
 			
 			/*if(testAbort == 0) {
 				testAbortPart2();
